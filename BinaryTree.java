@@ -5,7 +5,7 @@ import java.util.*;
  *
  * @author Chris Bailey-Kellogg, Dartmouth CS 10, Fall 2012
  * @author Scot Drysdale, Winter 2012.  Numerous modifications.
- * @author Naho Kitade Modified for SA7
+ * @author Naho Kitade Modified 
  */
 
 public class BinaryTree<E> {
@@ -320,90 +320,4 @@ public class BinaryTree<E> {
 
 		return returnTree;
 	}
-
-	/**
-	 * Second testing program for SA7 part. (by Naho Kitade)
-	 * @param args
-	 */
-	public static void main(String [] args){
-		System.out.println("First example:");
-		BinaryTree<String> tree1 = new BinaryTree<String>("bear",
-				new BinaryTree<String>("ant"), new BinaryTree<String>("cat"));
-		System.out.println("tree1: \n" + tree1);
-		BinaryTree<String> copyTree1 = tree1.copyTree();
-		System.out.println("Copied tree1: \n" + copyTree1);
-		System.out.println("Is copied tree equal to tree?: " + tree1.equals(copyTree1));
-		System.out.println("How many leaves in tree? (should be 2): " + tree1.countLeaves() + "\n");
-		System.out.println("Second example:");
-		BinaryTree<String> tree2= new BinaryTree<String>("cow", tree1, new BinaryTree<String>("dog"));
-		System.out.println("tree2: \n" + tree2);
-		BinaryTree<String> copyTree2 = tree2.copyTree();
-		System.out.println("Copied tree2: \n" + copyTree2);
-		System.out.println("Is copied tree2 equal to tree2?: " + tree2.equals(copyTree2));
-		System.out.println("How many leaves in tree? (should be 3): " + tree2.countLeaves() + "\n");
-		System.out.println("Third example:");
-		BinaryTree<String> tree3 = new BinaryTree<String>("rabbit");
-		tree3.setLeft(new BinaryTree<String>("puppy"));
-		System.out.println("tree3: \n" + tree3);
-		BinaryTree<String> copyTree3 = tree3.copyTree();
-		System.out.println("Copied tree3: \n" + copyTree3);
-		System.out.println("Is copied tree3 equal to tree3?: " + tree3.equals(copyTree3));
-		System.out.println("How many leaves in tree? (should be 1): " + tree3.countLeaves());
-	}
-
-	/**	
-	 * Testing program
-	 */
-	/*public static void main(String [] args) {	
-
-		// Create a tree by building it up
-
-		BinaryTree<String> leftChild = new BinaryTree<String>("bear",
-				new BinaryTree<String>("ant"), new BinaryTree<String>("cat"));
-		BinaryTree<String> tree= new BinaryTree<String>("cow", leftChild,
-				new BinaryTree<String>("dog"));
-
-
-		// Some tests of methods
-		System.out.println("tree: \n" + tree); 
-		System.out.println("Size of tree = " + tree.size());
-		System.out.println("Height of tree = " + tree.height());
-		System.out.println("Fringe of tree =" + tree.fringe());
-
-		// Build a tree from traversals
-		List<String> preList = new LinkedList<String>();
-		tree.preorder(preList);
-		System.out.println("Preorder traversal of the tree =" + preList);
-
-		List<String> inList = new LinkedList<String>();
-		tree.inorder(inList);
-		System.out.println("Inorder traversal of the tree =" + inList);
-
-		List<String> postList = new LinkedList<String>();
-		tree.postorder(postList);
-		System.out.println("Postorder traversal of the tree =" + postList);
-
-		BinaryTree<String> tree1 = reconstructTree(preList, inList);
-		System.out.println("tree1: \n" + tree1); 
-		System.out.println("tree and tree1 are equal? " + tree.equals(tree1));
-		System.out.println("Number of leaves = " + tree.countLeaves());
-		System.out.println("Copied tree: \n" + tree1.copyTree());
-
-		tree1.setValue("cougar");
-		System.out.println("tree: \n" + tree); 
-		System.out.println("modified tree1: \n" + tree1); 
-		System.out.println("tree and tree1 are equal? " + tree.equals(tree1));
-
-		BinaryTree<String> tree2= reconstructTree(preList, inList);
-		tree2.getLeft().setLeft(null);
-		System.out.println("tree2: \n" + tree2); 
-		System.out.println("Size of tree2 = " + tree2.size());
-		System.out.println("Height of tree2 = " + tree2.height());
-		System.out.println("Fringe of tree2 =" + tree2.fringe());
-		System.out.println("tree and tree2 are equal? " + tree.equals(tree2));
-		System.out.println("Number of leaves = " + tree2.countLeaves());
-		BinaryTree<String> copyTree2 = tree2.copyTree();
-		System.out.println("Copied tree: \n" + copyTree2);
-		System.out.println("tree and tree2 are equal? " + copyTree2.equals(tree2));
-	}		*/
 }
